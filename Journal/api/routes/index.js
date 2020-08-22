@@ -1,15 +1,14 @@
 var express =require('express');
 var router = express.Router();
 var userCtrl = require('../controllers/users.controller');
+var noteCtrl = require('../controllers/notes.controller');
 
 router
     .route('/register')
-    .get()
     .post(userCtrl.register)
 
 router  
     .route('/login')
-    .get()
     .post(userCtrl.login)
 
 router 
@@ -18,8 +17,7 @@ router
     .post()
 
 router
-    .route('/new')
-    .get()
-    .post()
+    .route('myNotes/new')
+    .post(noteCtrl.newJournal)
 
 module.exports = router;

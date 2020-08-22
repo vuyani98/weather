@@ -16,7 +16,12 @@ var journalSchema = new mongoose.Schema({
                  type      : String,
                  required  : true,
                  maxlength : 30
-              }
+              },
+    date    : {
+                  type     : String,
+                  required : true 
+               }          
+
 })
 
 

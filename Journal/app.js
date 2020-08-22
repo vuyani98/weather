@@ -19,6 +19,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 //Middleware for post requests
 app.use(express.urlencoded({extended : false}));
 
+app.use(express.json());
+
 //Api routing
 app.use('/api', routes);
 
