@@ -11,15 +11,17 @@ app.set('port', 3000);
 app.use('/', function(req, res, next){
     console.log(req.method, req.url);
     next();
-})
+});
 
 //Middleware serving static folders
 app.use(express.static(path.join(__dirname, '/public')));
+app.use('/node_modules', express.static(path.join(__dirname, '/node_modules')));
+
+//Middleware for post requests
+app.use(express.json());
 
 //Middleware for post requests
 app.use(express.urlencoded({extended : false}));
-
-app.use(express.json());
 
 //Api routing
 app.use('/api', routes);

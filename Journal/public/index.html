@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng" ng-app='journal'>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width initial-scale=1">
-        <title>Journal</title>
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        
+        <title>Journal</title>
     </head>
-    <body style="background-image: url('./images/wooden.jpg'); background-size: contain;">
-        <header style="border-style: solid; border-color: white; border-radius: 35px; background-color: none; color: white; height: 25px;">
-            <nav>
-                <span style="padding-left:10px; font-weight:bolder; font-size: x-large;" >JOURNAL</span>
-            </nav>
-        </header>
-        <section class="paper">
-            <article class="head">
-                <h2 contenteditable="true"> ENTER HEADING HERE</h2>
-            </article>
-             <p>&nbsp;</p>
-              <article contenteditable="true">Start typing your content editable content here!</article>
-        </section>
+    <body ng-cloak>
+        <div ng-view></div>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular-route/angular-route.js"></script>
+        <script src="./angular-app/app.js"></script>
+        <script src="./angular-app/controllers/signIn.controller.js"></script>
+        <script src="./angular-app/controllers/logIn.controller.js"></script>
+        <script src="angular-app/factories/authFactory.js"></script>
+        <script src="./angular-app/factories/auth-interceptor.js"></script>
+        <script src="./angular-app/controllers/journal.controller.js"></script>
+        <script src="./angular-app/directives/nav/nav-Directive.js"></script>
+        <script src="./angular-app/controllers/newJournal.controller.js"></script>
+        <script src="./angular-app/controllers/home.controller.js"></script>
+        <script src="./angular-app/controllers/oneJourn.controller.js"></script>
     </body>
 </html>

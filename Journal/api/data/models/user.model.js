@@ -1,5 +1,29 @@
 var mongoose = require('mongoose');
 
+var journalSchema = new mongoose.Schema({
+
+    author : {
+                type     : String,
+                required : true,
+             },
+
+    content : {
+                 type     : String,
+                 required : true
+              },
+              
+    heading : {
+                 type      : String,
+                 required  : true,
+                
+              },
+    date    : {
+                  type     : String,
+                  required : true 
+               }         
+
+})
+
 var userSchema = new mongoose.Schema({
 
     username : {
@@ -8,15 +32,13 @@ var userSchema = new mongoose.Schema({
                   required  : true
                 },
     
-    name     : {
-                    type : String
-                },
-
     password : {
                     type      : String,
                     required  : true,
                     minlength : 8
-                }            
+                },           
+    
+    journals : [ journalSchema ]           
 
 })
 

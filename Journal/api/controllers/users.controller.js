@@ -22,7 +22,7 @@ module.exports.register = function(req, res){
             if(err){
                 console.log(err);
                 res
-                  .status(500)
+                  .status(403)
                   .json(err)
             }
 
@@ -51,7 +51,7 @@ module.exports.login = function(req, res){
             if(err){
                 console.log(err);
                 res
-                  .status(500)
+                  .status(403)
                   .json(error)
             }
             
@@ -60,7 +60,7 @@ module.exports.login = function(req, res){
               console.log('User not found');
               res
                 .status(404)
-                .send("User not found")
+                .json({ userNotFound : true})
             }
 
             else{
@@ -71,15 +71,15 @@ module.exports.login = function(req, res){
                   var token = jwt.sign({username : username}, 's3cr3t', {expiresIn : 3600})
                   res
                     .status(200)
-                    .json({token : token})
+                    .json({success : true, token : token})
                 }
                 
                 //If password does not match
                 else{
                     console.log("Unauthorized");
                     res
-                      .status(400)
-                      .send("Unauthorized")
+                      .status(401)
+                      .json({ authFailure : true, auth : null })
                 }
                 
             }
@@ -88,21 +88,22 @@ module.exports.login = function(req, res){
 
 module.exports.authenticate = function(req, res, next){
   
-  if(req.header.authorization){
+  if(req.headers.authorization){
     
-    var token = req.header.authorization.split('')[1];
+    var token = req.headers.authorization.split(' ')[1];
     
     jwt.verify(token, 's3cr3t', function(err, decoded){
+
         if(err){
-          console.log(err)
+          console.log(err);
           res
-            .status(400)
+            .status(401)
             .json(err)
         }
 
         else{
           console.log('token is valid');
-          req.user = decoded.username;
+          req.body.user = decoded.username;
           next();
         }
     })

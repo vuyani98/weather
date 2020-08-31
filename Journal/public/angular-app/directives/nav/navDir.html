@@ -1,0 +1,39 @@
+<div class="myNav">
+
+    <span id="navHeader">JOURNAL 
+        <image src="../../../images/pen.svg" style="height: 29px; padding-bottom: 4px;"></image>
+    </span>
+     
+    
+    <span class="navRight" >
+        <span class="navLink">
+            <a  href="#!/" style="color: black;" > 
+                <img src="../../../images/house-door.svg" style="height: 18px; padding-bottom: 3px;"> HOME</a>
+        </span>
+        <span class="navLink">
+            <a  href="#!/myJournals" >
+                <img src="../../../images/journals.svg" style="height: 18px; padding-bottom: 3px;">JOURNALS
+            </a>
+        </span>
+        <span class="navLink">
+            <a  ng-if="VM.isLoggedIn()" href="#!/myJournals/new"> 
+                <img src="../../../images/journal-plus.svg" style="height: 18px; padding-bottom: 3px;"> NEW 
+            </a>
+        </span>
+        <span id="signUp" class="navLink">  
+            <a ng-if="!VM.isLoggedIn()" href="#!/login"> LOG IN </a>
+            <a ng-if="VM.isLoggedIn()" ng-click="VM.logOut()" href="#!/logout">LOG OUT</a>
+        </span>
+    </span>
+    
+</div>
+
+ 
+
+ 
+
+        
+ 
+        
+        
+        

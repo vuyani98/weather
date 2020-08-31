@@ -21,5 +21,5 @@ mongoose.connection.on('close', function(){
 });
 
 
-require('./models/journal.model');
 require('./models/user.model');
+require('./models/quotes.model')
