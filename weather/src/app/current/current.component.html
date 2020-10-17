@@ -1,0 +1,18 @@
+<br>
+<br>
+<form id="formCity" (submit)="getByCity()">
+    <input id="city" type="text" placeholder="Search by City" name="city" [(ngModel)]="city">
+    <input id="btnCity" type="submit" value="SEARCH">
+</form>
+<div [@cardEntry] class="weatherCard">
+    <div class="symbol">
+        <div><img [src]="weather.icon"></div>
+        <div>{{ weather.temp }}<sup>o</sup>C</div>
+        <div style="margin-top: 10px;font-size: large; font-weight: bold;">humidity : {{weather.humidity}}</div>
+        <div style="margin-top: 10px;font-size: large; font-weight: bold;">{{weather.description}}</div>
+    </div>
+    <div class="detail">
+        <div>{{ weather.city}}, {{weather.country}}</div>
+    </div>
+    
+</div>

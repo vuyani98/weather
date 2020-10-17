@@ -1,0 +1,78 @@
+.weatherCard{
+    opacity: 1;
+    color:white;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 500px;
+    width: 230px;
+    height: 390px;
+    border-style: solid;
+    border-color: #dff0fa; 
+    border-width: 2px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 6px 6px 6px  rgb(148, 150, 151);
+}
+
+.symbol{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #fcefee;
+    font-size: xxx-large;
+    font-weight: bolder;
+    color: grey;
+    height: 300px;
+}
+.detail{
+    padding-top: 25px;
+    height: 64.5px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color:#fccde2; 
+    font-weight: bold;
+    color: grey;
+}
+
+#formCity {
+    margin-top: 60px; 
+    margin-left: 25px;
+}
+
+#city{
+
+    padding-left: 20px;
+    width: 250px;
+    height: 30px;
+    background-color: none;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #fccde2;
+    color: #fccde2;
+    font-weight: bold;
+    box-shadow: 6px 6px 6px  rgb(148, 150, 151);
+}
+
+#city:focus{
+    outline : none;
+}
+
+#btnCity{
+    margin-left: 20px;
+    color: #fccde2;
+    font-weight: bolder;
+    font-size: large;
+    background-color:  white;
+    border-color: #fccde2;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    height: 35px;
+    width: 100px;
+    box-shadow: 6px 6px 6px  rgb(148, 150, 151);
+    outline: none;
+}
+

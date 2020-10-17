@@ -1,0 +1,38 @@
+
+
+#home{
+
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 100px;
+    padding-top: 15px;
+    padding-right: 15px;
+    
+}
+
+nav{
+
+    float: left;
+}
+.wlink a{
+    color: #fccde2;
+    text-decoration: none;
+}
+
+.wlink a:active
+{
+    color: grey; 
+} .wlink:hover {
+    color: grey;
+}
+
+.wlink{
+    border-right-style: solid;
+    border-right-width: 3px;
+    border-right-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 20px;
+    padding-left: 25px;
+}
