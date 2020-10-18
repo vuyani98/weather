@@ -1,0 +1,17 @@
+
+<br>
+<br>
+<div  style="display: flex; margin-left: 20px;">
+    <div class="weatherCard" *ngFor ="let hour of hourlyArray | slice : 0 : 7 ; let i = index ">
+
+        <div class="symbol">
+            <div><img [src] = "this.app.getIcon(hour.weather[0].icon)"></div> 
+            <div> {{ this.app.getTemp(hour.temp) }}<sup>o</sup>C</div>
+            <div >{{hour.weather[0].description}}</div>
+            <div class="temp">Humidity: {{hour.humidity}}</div>
+        </div>
+        <div class="detail">
+            <div>{{ this.app.getTime(hour.dt) }}</div>
+        </div>
+    </div>
+</div>
