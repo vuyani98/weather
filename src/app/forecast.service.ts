@@ -28,28 +28,28 @@ export class ForecastService{
   //function gets current weather
   getWeather(lat, long): Observable<Iweather>{
 
-    return this.http.get<Iweather>(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${this.key}`).pipe( retry(2),
+    return this.http.get<Iweather>(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${this.key}`).pipe( retry(2),
       catchError(this.handleError));
   }
 
   //function gets weekly weather data
   getWeekly(lat, long): Observable<Idaily>{
 
-    return this.http.get<Idaily>(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly&appid=${this.key}`).pipe( retry(2),
+    return this.http.get<Idaily>(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly&appid=${this.key}`).pipe( retry(2),
     catchError(this.handleError));;
    }
    
    //function gets weather data by city searched
    getCityWeather(city): Observable<Iweather>{
 
-    return this.http.get<Iweather>(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.key}`).pipe( retry(2),
+    return this.http.get<Iweather>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.key}`).pipe( retry(2),
     catchError(this.handleError));
    }
 
    //function gets Hourly weather data
    getHourly(lat, long): Observable<Ihourly>{
 
-    return this.http.get<Ihourly>(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=daily,minutely&appid=${this.key}`).pipe( retry(2),
+    return this.http.get<Ihourly>(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=daily,minutely&appid=${this.key}`).pipe( retry(2),
     catchError(this.handleError));;
    }
    
