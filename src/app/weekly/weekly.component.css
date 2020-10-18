@@ -41,3 +41,11 @@
     font-weight: bold;
     color: grey;
 }
+
+@media (max-width : 750px){
+    .weatherCard{
+        width: 150px;
+        margin-left: 0;
+        margin-top: 25px
+    }
+}

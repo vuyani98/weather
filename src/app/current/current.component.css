@@ -76,3 +76,14 @@
     outline: none;
 }
 
+@media (max-width : 750px){
+
+    .weatherCard{
+        margin-left: 40px;
+    }
+
+    #btnCity{
+         margin-left: 5px;
+         margin-top: 25px;
+    }
+}
