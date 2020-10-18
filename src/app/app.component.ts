@@ -32,6 +32,8 @@ export class AppComponent {
         };
 
         this.forecast.setLocation(data);
+      }, error  => {
+        alert(error);
       })
     }
     else{
